@@ -1,0 +1,6 @@
+![banner-lago-penne](https://github.com/user-attachments/assets/bb66a71b-672c-4bba-a7e8-5850f8b356bf)
+![gallery-canoa](https://github.com/user-attachments/assets/c47b6e65-1110-4eba-940e-7a0f9f8bffe2)
+[index.html](https://github.com/user-attachments/files/26649339/index.html)
+![gallery-lago-bike](https://github.com/user-attachments/assets/ba781250-28cc-4777-8f3c-310fb64795f9)
+![gallery-guado-group](https://github.com/user-attachments/assets/a8c654a5-9616-4381-a94b-4863c1c23c57)
+![gallery-guado-front](https://github.com/user-attachments/assets/4c608d7f-f6e1-419a-ae95-a274c5149b21)
