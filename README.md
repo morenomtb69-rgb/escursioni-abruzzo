@@ -1,1 +1,0 @@
-# escursioni-abruzzo
