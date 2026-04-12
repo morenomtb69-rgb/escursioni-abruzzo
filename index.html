@@ -3,124 +3,706 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Escursione MTB – Abruzzo Exploring</title>
-
+<title>Anello Colline Vestine | Gruppo Ciclo CAI Pescara</title>
+<meta name="description" content="Scheda escursione interattiva per Anello Colline Vestine.">
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f5f5f5;
-  color: #333;
+:root{
+  --bg:#f5f3ee;
+  --card:#ffffff;
+  --ink:#203127;
+  --muted:#627064;
+  --line:#d9dfd6;
+  --accent:#315f3b;
+  --soft:#eaf1e8;
+  --soft2:#f3edd1;
+  --shadow:0 12px 34px rgba(0,0,0,.10);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,calc(100% - 28px));margin:0 auto}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:rgba(250,248,243,.95);
+  border-bottom:1px solid rgba(0,0,0,.06);
+  backdrop-filter:blur(10px);
+}
+.topbar-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding:14px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:700;
+}
+.brand-badge{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:var(--soft);
+  display:grid;
+  place-items:center;
+  font-size:22px;
+}
+.brand small{
+  display:block;
+  font-weight:700;
+  letter-spacing:.02em;
+  color:var(--accent);
+}
+.menu{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-weight:700;
+}
+.menu a:hover{color:var(--accent)}
+
+.hero{
+  min-height:72vh;
+  color:#fff;
+  background:
+    linear-gradient(rgba(14,20,16,.28),rgba(14,20,16,.55)),
+    url('banner-lago-penne.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:flex-end;
+}
+.hero-inner{
+  padding:52px 0 34px;
+  width:min(1180px,calc(100% - 28px));
+  margin:0 auto;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.55fr .85fr;
+  gap:22px;
+  align-items:end;
+}
+.kicker{
+  display:inline-block;
+  padding:9px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.22);
+  font-size:14px;
+  margin-bottom:14px;
+}
+h1{
+  margin:0 0 10px;
+  font-size:clamp(38px,6vw,66px);
+  line-height:1.02;
+}
+.hero h2{
+  margin:0 0 10px;
+  font-size:clamp(24px,3vw,38px);
+  font-weight:400;
+}
+.hero .lead{
+  margin:0;
+  font-size:clamp(18px,2.2vw,28px);
+  opacity:.95;
+}
+.hero-panel{
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(10px);
+  border-radius:24px;
+  padding:20px;
+}
+.status{
+  display:inline-block;
+  background:rgba(45,97,61,.86);
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+.hero-actions{
+  display:grid;
+  gap:12px;
+  margin-top:8px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border:none;
+  border-radius:14px;
+  padding:14px 18px;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:var(--shadow);
+}
+.btn-primary{background:#56bf4e;color:#fff}
+.btn-secondary{background:#fff;color:var(--accent)}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.38)}
+
+.quickstats{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:14px;
+  margin-top:-32px;
+  position:relative;
+  z-index:3;
+}
+.stat{
+  background:var(--card);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  padding:18px 16px;
+  text-align:center;
+}
+.stat strong{
+  display:block;
+  font-size:30px;
+  line-height:1;
+  margin-bottom:8px;
+  color:var(--accent);
+}
+.stat span{
+  color:var(--muted);
+  font-weight:700;
+  font-size:14px;
 }
 
-header {
-  background: #1a6b2a;
-  color: white;
-  padding: 20px;
-  text-align: center;
+.section{padding:42px 0}
+.grid-main{
+  display:grid;
+  grid-template-columns:1.35fr .75fr;
+  gap:24px;
+}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:24px;
+}
+.card h3{
+  margin:0 0 16px;
+  font-size:28px;
+}
+.card h4{
+  margin:18px 0 10px;
+  font-size:18px;
+}
+.meta-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.meta-grid div{
+  background:var(--soft);
+  border-radius:16px;
+  padding:14px;
+}
+.meta-grid span{
+  display:block;
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:4px;
+}
+.badge-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+.badge{
+  background:var(--soft2);
+  border-radius:999px;
+  padding:9px 12px;
+  font-weight:700;
+  color:#5b532f;
+}
+.experience-list{
+  display:grid;
+  gap:14px;
+}
+.experience{
+  background:linear-gradient(180deg,#fbfcf9,#f1f6ef);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+}
+.experience strong{
+  display:block;
+  margin-bottom:6px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+th,td{
+  text-align:left;
+  padding:12px 10px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+th{
+  color:var(--muted);
+  font-size:14px;
+}
+.notice{
+  margin-top:14px;
+  font-size:14px;
+  color:#6b6241;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+.gallery-shell{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:24px;
+  align-items:start;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.gallery-card{
+  margin:0;
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  background:#ddd;
+  box-shadow:var(--shadow);
+}
+.gallery-card img{
+  width:100%;
+  height:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+.gallery-card figcaption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:12px 14px;
+  color:#fff;
+  font-weight:700;
+  font-size:14px;
+  background:linear-gradient(transparent,rgba(0,0,0,.58));
+}
+.side-stack{
+  display:grid;
+  gap:24px;
+}
+.list-clean{
+  margin:0;
+  padding-left:18px;
+}
+.list-clean li{margin:8px 0}
+.price-list{
+  display:grid;
+  gap:8px;
+  margin-top:12px;
+}
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  padding:10px 0;
+  border-bottom:1px solid var(--line);
+  font-weight:700;
+}
+.altimetry{
+  border-radius:20px;
+  overflow:hidden;
+  background:var(--soft);
+  border:1px solid var(--line);
+}
+.altimetry img{
+  width:100%;
+  aspect-ratio:16/7;
+  object-fit:cover;
+}
+.altimetry-placeholder{
+  width:100%;
+  aspect-ratio:16/7;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  color:var(--muted);
+  text-align:center;
+  font-weight:700;
+}
+.preview-stack{
+  display:grid;
+  gap:12px;
+}
+.preview-stack img{
+  width:100%;
+  border-radius:14px;
+  object-fit:cover;
+}
+.footer{
+  padding:30px 0 60px;
+  color:var(--muted);
+  font-size:14px;
+}
+.sticky-tools{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  display:grid;
+  gap:10px;
+  z-index:30;
+}
+.floating{
+  border-radius:999px;
+  padding:14px 16px;
+  box-shadow:var(--shadow);
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+@media (max-width:980px){
+  .hero-grid,.grid-main,.gallery-shell{grid-template-columns:1fr}
+  .quickstats{grid-template-columns:repeat(2,1fr);margin-top:18px}
 }
-
-.btn {
-  display: inline-block;
-  padding: 12px 18px;
-  margin-top: 10px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.btn-primary {
-  background: #1a6b2a;
-  color: white;
-}
-
-.btn-secondary {
-  background: #555;
-  color: white;
-}
-
-h2 {
-  margin-top: 0;
+@media (max-width:640px){
+  .menu{display:none}
+  .meta-grid,.gallery-grid{grid-template-columns:1fr}
+  .hero{min-height:66vh}
 }
 </style>
-
 </head>
-
 <body>
 
-<header>
-  <h1>Escursione MTB</h1>
-  <p>Abruzzo Exploring</p>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <div class="brand-badge">🚵</div>
+      <div>Escursioni<br><small>ABRUZZO EXPLORING</small></div>
+    </div>
+    <nav class="menu">
+      <a href="#evento">Evento</a>
+      <a href="#programma">Programma</a>
+      <a href="#galleria">Foto e Video</a>
+      <a href="#gpx">GPX</a>
+      <a href="#sicurezza">Sicurezza</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
-
-  <div class="card">
-    <h2>📍 Punto di partenza</h2>
-    <p>Clicca per aprire la posizione su Google Maps</p>
-
-    <a class="btn btn-primary" 
-       href="https://maps.app.goo.gl/5jFggt6LRrDZosuv9" 
-       target="_blank">
-       📍 Apri la mappa
-    </a>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">Sabato 25 Aprile 2026 · Festa della Liberazione</div>
+        <h2>Cicloescursione Esperienziale</h2>
+        <h1>Anello Colline Vestine</h1>
+        <p class="lead">Riserva Naturale Lago di Penne — Farindola</p>
+        <p class="lead" style="font-weight:700;margin-top:8px;">Gruppo Ciclo CAI Pescara</p>
+      </div>
+      <aside class="hero-panel">
+        <div class="status">Stato: Aperto</div>
+        <div style="font-size:15px;opacity:.95;margin-bottom:14px;">
+          Cicloescursione guidata tra Lago di Penne e Farindola, con scheda tecnica, programma dettagliato, traccia GPX e informazioni utili per la partecipazione.
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/393342317860?text=Vorrei%20iscrivermi%20all%27escursione%20Anello%20Colline%20Vestine" target="_blank" rel="noopener">📲 Iscriviti su WhatsApp</a>
+          <a class="btn btn-secondary" href="https://maps.app.goo.gl/5jFggt6LRrDZosuv9" target="_blank" rel="noopener">📍 Punto di partenza</a>
+          <a class="btn btn-outline" href="#facebook">👍 Profilo Facebook</a>
+        </div>
+      </aside>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2>📊 Dati escursione</h2>
-    <p><strong>Distanza:</strong> XX km</p>
-    <p><strong>Dislivello:</strong> XX m</p>
-    <p><strong>Difficoltà:</strong> MC / MC</p>
+<section class="wrap quickstats">
+  <div class="stat"><strong>30</strong><span>km</span></div>
+  <div class="stat"><strong>600</strong><span>D+ m</span></div>
+  <div class="stat"><strong>270</strong><span>quota min</span></div>
+  <div class="stat"><strong>760</strong><span>quota max</span></div>
+  <div class="stat"><strong>~5h</strong><span>durata</span></div>
+  <div class="stat"><strong>20</strong><span>max partecipanti</span></div>
+</section>
+
+<section class="section" id="evento">
+  <div class="wrap grid-main">
+    <div class="card">
+      <h3>Scheda tecnica</h3>
+      <div class="meta-grid">
+        <div><span>Codice</span><strong>ACV-APR · Anello</strong></div>
+        <div><span>Tipo</span><strong>Anello — Cicloescursione Esperienziale</strong></div>
+        <div><span>Lunghezza</span><strong>30 km</strong></div>
+        <div><span>Difficoltà tecnica</span><strong>MC / MC</strong></div>
+        <div><span>Dislivello +</span><strong>600 m</strong></div>
+        <div><span>Dislivello -</span><strong>600 m</strong></div>
+        <div><span>Quota minima</span><strong>270 m s.l.m.</strong></div>
+        <div><span>Quota massima</span><strong>760 m</strong></div>
+        <div><span>Fondo</span><strong>Misto: sterrato 70% + asfalto 30%</strong></div>
+        <div><span>Bici</span><strong>MTB / Gravel / E-Bike ✓ (noleggio disponibile)</strong></div>
+      </div>
+
+      <h4>Logistica</h4>
+      <div class="meta-grid">
+        <div><span>Data</span><strong>Sabato 25 Aprile 2026 · Festa della Liberazione</strong></div>
+        <div><span>Ritrovo</span><strong>Ore 08:30 — Parcheggio Wolf Tour — Penne (PE)</strong></div>
+        <div><span>Briefing</span><strong>Ore 08:45</strong></div>
+        <div><span>Partenza</span><strong>Ore 09:00</strong></div>
+        <div><span>Fine attività</span><strong>Ore 14:00</strong></div>
+        <div><span>Organizzatore</span><strong>Moreno Agnellini</strong></div>
+        <div><span>Contatto</span><strong>+39 334 231 7860</strong></div>
+        <div><span>Partecipanti</span><strong>Min 8 · Max 20</strong></div>
+        <div><span>Assicurazione</span><strong>CAI — copertura giornaliera per non soci</strong></div>
+        <div><span>Meteo</span><strong>Verificare — annullare in caso di pioggia</strong></div>
+      </div>
+
+      <h4>Accompagnatori</h4>
+      <div class="badge-row">
+        <span class="badge">Moreno Agnellini</span>
+        <span class="badge">Loris Storto</span>
+        <span class="badge">Daniele Lucci</span>
+      </div>
+
+      <h4>Quote</h4>
+      <div class="experience-list">
+        <div class="experience">
+          <strong>Soci CAI — 10€</strong>
+          quota destinata allo sdijuno tradizionale a Farindola.
+        </div>
+        <div class="experience">
+          <strong>Non Soci — 20€</strong>
+          comprende sdijuno + assicurazione giornaliera CAI.
+        </div>
+      </div>
+
+      <p class="notice">
+        L'escursione unisce pedalata, visita naturalistica, attraversamenti e momento conviviale. La scheda raccoglie le informazioni essenziali per partecipare con consapevolezza e vivere al meglio l’esperienza sul territorio.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Attività esperienziali</h3>
+      <div class="experience-list">
+        <div class="experience">
+          <strong>🦅 Visita guidata — Riserva Naturale Lago di Penne</strong>
+          Oasi WWF. Visita al centro visite e al lago artificiale sul Fiume Tavo, con focus su flora, fauna locale e avifauna stanziale e migratoria. Tempo previsto: ~45 min.
+        </div>
+        <div class="experience">
+          <strong>🧀 Sdijuno tradizionale — Pecorino di Farindola</strong>
+          Degustazione del Pecorino di Farindola DOP e spuntino tradizionale. Tempo previsto: ~45 min.
+        </div>
+      </div>
+
+      <h4>🌤 Meteo · Farindola</h4>
+      <a class="btn btn-secondary" href="https://www.3bmeteo.com/meteo/farindola" target="_blank" rel="noopener">Apri Meteo Farindola</a>
+      <p class="notice">
+        Le condizioni meteo saranno valutate dagli accompagnatori fino a ridosso della partenza. In caso di pioggia o condizioni avverse l’uscita potrà essere modificata o annullata.
+      </p>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2>📖 Descrizione</h2>
-    <p>
-      Escursione cicloturistica alla scoperta del territorio collinare abruzzese,
-      tra paesaggi di grande valore naturalistico e tratti tecnici divertenti.
-    </p>
+<section class="section" id="programma">
+  <div class="wrap grid-main">
+    <div class="card">
+      <h3>Programma dettagliato · soste esperienziali incluse</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Orario</th>
+            <th>Km</th>
+            <th>Quota</th>
+            <th>Tappa / Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>08:30</td><td>—</td><td>~380 m</td><td>🟢 Ritrovo Parcheggio Wolf Tour — verifica bici</td></tr>
+          <tr><td>08:45</td><td>—</td><td>~380 m</td><td>📋 Briefing percorso — distribuzione traccia GPX e GeoResq</td></tr>
+          <tr><td>09:00</td><td>km 0</td><td>~380 m</td><td>▶ PARTENZA — uscita da Penne verso la Riserva</td></tr>
+          <tr><td>09:30</td><td>km 5</td><td>~310 m</td><td>Discesa verso il Lago di Penne — primo panorama sul lago</td></tr>
+          <tr><td>09:45</td><td>km 7</td><td>~270 m</td><td>🦅 SOSTA — Visita guidata Riserva Naturale (~45 min)</td></tr>
+          <tr><td>10:30</td><td>km 10</td><td>~300 m</td><td>Ripresa escursione — inizio salita verso Farindola</td></tr>
+          <tr><td>11:15</td><td>km 15</td><td>~520 m</td><td>Tratto panoramico collinare — vista sull'Adriatico</td></tr>
+          <tr><td>12:00</td><td>km 20</td><td>~760 m</td><td>🧀 ARRIVO FARINDOLA — sdijuno + pecorino (~45 min)</td></tr>
+          <tr><td>12:45</td><td>km 22</td><td>~700 m</td><td>Ripresa — discesa panoramica verso Penne</td></tr>
+          <tr><td>13:30</td><td>km 27</td><td>~450 m</td><td>Tratto finale — sterrato compatto veloce</td></tr>
+          <tr><td>14:00</td><td>km 30</td><td>~380 m</td><td>🏁 RIENTRO — Parcheggio Wolf Tour</td></tr>
+        </tbody>
+      </table>
+
+      <p class="notice">
+        Il programma è indicativo e potrà essere adattato dagli accompagnatori in base alle condizioni del gruppo, del meteo e del percorso, nel rispetto della sicurezza e della buona riuscita dell’escursione.
+      </p>
+    </div>
+
+    <div class="side-stack">
+      <div class="card">
+        <h3>Grafico altimetrico</h3>
+        <div class="altimetry">
+          <img src="profilo-altimetrico.jpg" alt="Profilo altimetrico Anello Colline Vestine" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <div class="altimetry-placeholder" style="display:none;">
+            Carica il file <strong>profilo-altimetrico.jpg</strong><br>
+            per visualizzare il grafico altimetrico con Lago di Penne e Farindola.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="gpx">
+        <h3>GPX e strumenti</h3>
+        <div class="experience-list">
+          <a class="btn btn-secondary" href="mtb-penne-farindola-penne.gpx" download>⬇ Scarica GPX</a>
+          <a class="btn btn-secondary" href="https://maps.app.goo.gl/5jFggt6LRrDZosuv9" target="_blank" rel="noopener">🗺 Mappa percorso</a>
+          <a class="btn btn-secondary" href="https://web.georesq.it/" target="_blank" rel="noopener">🆘 Sito GeoResQ</a>
+          <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=it.georesq" target="_blank" rel="noopener">▶ Google Play</a>
+          <a class="btn btn-secondary" href="https://apps.apple.com/it/app/georesq/id1465217102" target="_blank" rel="noopener"> App Store</a>
+        </div>
+        <p class="notice">
+          Scarica la traccia prima dell’uscita e verifica sempre strumenti, posizione GPS e condizioni reali del percorso.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Noleggio E-Bike</h3>
+        <p><strong>🚴 Wolf Tour</strong><br>📞 +39 085 827 8444</p>
+        <p class="notice" style="margin-top:0;">
+          Noleggio e-bike disponibile in loco presso Wolf Tour, Penne. Prenotare in anticipo.
+        </p>
+        <div class="price-list">
+          <div class="price-row"><span>1h</span><span>€6</span></div>
+          <div class="price-row"><span>2h</span><span>€10</span></div>
+          <div class="price-row"><span>3h</span><span>€12</span></div>
+          <div class="price-row"><span>6h</span><span>€14</span></div>
+          <div class="price-row"><span>12h</span><span>€16</span></div>
+          <div class="price-row"><span>24h</span><span>€18</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📷 Anteprima percorso</h3>
+        <div class="preview-stack">
+          <img src="gallery-lago-bike.jpg" alt="Biker sul Lago di Penne">
+          <img src="gallery-guado-front.jpg" alt="Attraversamento del guado">
+          <img src="gallery-canoa.jpg" alt="Esperienza in canoa sul lago">
+        </div>
+        <p class="notice">
+          Immagini indicative del percorso e delle esperienze previste.
+        </p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2>📂 Traccia GPX</h2>
-    <a class="btn btn-primary" href="#" target="_blank">
-      Scarica GPX
-    </a>
+<section class="section" id="galleria">
+  <div class="wrap gallery-shell">
+    <div class="card">
+      <h3>Foto e video di repertorio</h3>
+      <div class="gallery-grid">
+        <figure class="gallery-card">
+          <img src="gallery-lago-bike.jpg" alt="Biker sul Lago di Penne">
+          <figcaption>Biker sul Lago di Penne</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="gallery-guado-front.jpg" alt="Attraversamento del guado">
+          <figcaption>Attraversamento del guado</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="gallery-guado-group.jpg" alt="Gruppo nel guado">
+          <figcaption>Gruppo nel guado</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="gallery-canoa.jpg" alt="Esperienza in canoa sul lago">
+          <figcaption>Esperienza in canoa sul lago</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="side-stack">
+      <div class="card" id="facebook">
+        <h3>Facebook</h3>
+        <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">👍 Profilo Facebook</a>
+        <p class="notice">
+          Inserire qui il link reale al profilo Facebook di Moreno Agnellini.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📂 Foto dell’attività svolta</h3>
+        <p>
+          Accedi alla cartella condivisa per vedere e caricare le foto dell’attività.
+        </p>
+        <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1m0OpXg3SJsmn2WBaG51bV6ATSwBphyvl" target="_blank" rel="noopener">
+          📷 Apri la cartella foto
+        </a>
+        <p class="notice">
+          Verifica che la cartella Drive sia condivisa correttamente con i partecipanti.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>GeoResq</h3>
+        <p>
+          GeoResq è l'app ufficiale del Corpo Nazionale Soccorso Alpino (CNSAS), promossa dal CAI. Invia automaticamente la posizione GPS ai soccorritori in caso di emergenza.
+        </p>
+        <ul class="list-clean">
+          <li>gratuita</li>
+          <li>da attivare prima dell’uscita</li>
+          <li>verificare corretta posizione GPS</li>
+        </ul>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2>📷 Foto dell’escursione</h2>
+<section class="section" id="sicurezza">
+  <div class="wrap grid-main">
+    <div class="card">
+      <h3>Dotazione obbligatoria e sicurezza</h3>
+      <ul class="list-clean">
+        <li>Almeno 1,5 L di acqua</li>
+        <li>Kit riparazioni obbligatorio: camera d'aria, leve, mini-pompa</li>
+        <li>Casco obbligatorio</li>
+        <li>Scarpe SPD o simili consigliate</li>
+        <li>Abbigliamento a strati — quota max 760 m, possibile fresco</li>
+        <li>Traccia GPX scaricata offline</li>
+        <li><strong>Bici correttamente revisionata dal meccanico di fiducia</strong></li>
+      </ul>
+      <p class="notice">
+        Confermare l’uscita in base a meteo, fondo e stato reale del percorso. La traccia GPX è un supporto, non sostituisce la valutazione sul campo.
+      </p>
+    </div>
 
-    <a class="btn btn-primary"
-       href="https://drive.google.com/drive/folders/1m0OpXg3SJsmn2WBaG51bV6ATSwBphyvl"
-       target="_blank">
-       📂 Apri la galleria foto
-    </a>
+    <div class="card">
+      <h3>Scheda escursione</h3>
+      <p>
+        Scheda cicloescursionistica con contenuti tecnici, informazioni logistiche, repertorio fotografico, strumenti di sicurezza e traccia GPX scaricabile.
+      </p>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2>👍 Seguici</h2>
+<footer class="footer">
+  <div class="wrap">Gruppo Ciclo CAI Pescara · Abruzzo Exploring · Scheda escursione online.</div>
+</footer>
 
-    <a class="btn btn-secondary"
-       href="https://www.facebook.com/"
-       target="_blank">
-       Profilo Facebook
-    </a>
-  </div>
-
+<div class="sticky-tools">
+  <a class="btn btn-primary floating" href="https://wa.me/393342317860?text=Vorrei%20iscrivermi%20all%27escursione%20Anello%20Colline%20Vestine" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
 </body>
