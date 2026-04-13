@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anello Colline Vestine | Gruppo Ciclo CAI Pescara</title>
-  <meta name="description" content="Cicloescursione esperienziale Anello Colline Vestine. Riserva Naturale Lago di Penne, Farindola, panorami sul Gran Sasso e attività esperienziali.">
+  <meta name="description" content="Cicloescursione esperienziale Anello Colline Vestine. Riserva Naturale Lago di Penne, Farindola, panorami sul Gran Sasso, attività esperienziali e possibilità di partecipare con E-Bike a noleggio.">
+
   <style>
     :root {
       --bg: #f5f3ee;
@@ -16,13 +17,18 @@
       --accent-dark: #274d30;
       --soft: #eaf1e8;
       --soft2: #f3edd1;
-      --shadow: 0 12px 34px rgba(0,0,0,.10);
+      --shadow: 0 12px 34px rgba(0, 0, 0, 0.10);
       --radius: 22px;
       --max: 1200px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -51,9 +57,9 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(245,243,238,.94);
+      background: rgba(245, 243, 238, 0.94);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
 
     .topbar .wrap {
@@ -80,7 +86,11 @@
     .nav a {
       font-size: 14px;
       color: var(--ink);
-      opacity: .9;
+      opacity: 0.9;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
     }
 
     .hero {
@@ -89,20 +99,20 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.55fr .95fr;
+      grid-template-columns: 1.55fr 0.95fr;
       gap: 24px;
       align-items: stretch;
     }
 
     .hero-photo {
       position: relative;
-      min-height: 560px;
+      min-height: 580px;
       border-radius: 28px;
       overflow: hidden;
       box-shadow: var(--shadow);
       background:
-        linear-gradient(to top, rgba(18,27,22,.68), rgba(18,27,22,.16) 45%, rgba(18,27,22,.02)),
-        url("foto-hero.jpg") center/cover no-repeat;
+        linear-gradient(to top, rgba(18, 27, 22, 0.70), rgba(18, 27, 22, 0.18) 45%, rgba(18, 27, 22, 0.03)),
+        url("foto-hero.jpg") center center / cover no-repeat;
     }
 
     .hero-overlay {
@@ -122,10 +132,10 @@
       display: inline-block;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.16);
+      background: rgba(255, 255, 255, 0.16);
       color: #fff;
       font-size: 13px;
-      letter-spacing: .2px;
+      letter-spacing: 0.2px;
       margin-bottom: 12px;
     }
 
@@ -138,8 +148,18 @@
     .hero-title p {
       margin: 0;
       font-size: 16px;
-      color: rgba(255,255,255,.92);
+      color: rgba(255, 255, 255, 0.92);
       max-width: 62ch;
+    }
+
+    .hero-note {
+      margin-top: 14px;
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.14);
+      font-weight: 700;
+      font-size: 14px;
     }
 
     .side-panel {
@@ -159,6 +179,16 @@
       margin: 0 0 14px;
       font-size: 22px;
       line-height: 1.15;
+    }
+
+    .section {
+      padding: 10px 0 26px;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 30px;
+      line-height: 1.1;
     }
 
     .status {
@@ -195,7 +225,12 @@
       font-weight: 700;
       text-align: center;
       border: 1px solid transparent;
-      transition: .2s ease;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
     }
 
     .btn.primary {
@@ -207,10 +242,6 @@
       background: #fff;
       color: var(--ink);
       border-color: var(--line);
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
     }
 
     .contact-quick {
@@ -252,24 +283,14 @@
       display: block;
       font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: .3px;
+      letter-spacing: 0.3px;
       color: var(--muted);
       font-weight: 700;
     }
 
-    .section {
-      padding: 10px 0 26px;
-    }
-
-    .section-title {
-      margin: 0 0 18px;
-      font-size: 30px;
-      line-height: 1.1;
-    }
-
     .two-col {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 24px;
     }
 
@@ -395,7 +416,7 @@
       background: var(--soft);
       font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: .3px;
+      letter-spacing: 0.3px;
       color: var(--muted);
     }
 
@@ -433,6 +454,7 @@
       border-radius: 14px;
       background: #fff;
       font-weight: 700;
+      padding: 12px;
     }
 
     .gallery {
@@ -459,8 +481,21 @@
       font-weight: 700;
     }
 
-    .share-box,
-    .spirit-box,
+    .convivial-banner {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .convivial-banner img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
     .safety-box,
     .contacts-box {
       background: #fff;
@@ -490,7 +525,7 @@
       }
 
       .hero-photo {
-        min-height: 420px;
+        min-height: 430px;
       }
 
       .info-item {
@@ -500,6 +535,10 @@
 
       .tool-links {
         grid-template-columns: 1fr;
+      }
+
+      .convivial-banner img {
+        height: 360px;
       }
     }
 
@@ -517,10 +556,6 @@
         justify-content: flex-start;
       }
 
-      .metrics {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
       .hero-photo {
         min-height: 340px;
       }
@@ -532,6 +567,14 @@
       .hero-title p {
         font-size: 15px;
       }
+
+      .metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .convivial-banner img {
+        height: 280px;
+      }
     }
   </style>
 </head>
@@ -542,7 +585,9 @@
       <div class="brand">Gruppo Ciclo CAI Pescara</div>
       <nav class="nav">
         <a href="#evento">Evento</a>
+        <a href="#info">Info</a>
         <a href="#esperienze">Esperienze</a>
+        <a href="#ebike">E-Bike</a>
         <a href="#territorio">Territorio</a>
         <a href="#programma">Programma</a>
         <a href="#gpx">GPX</a>
@@ -564,6 +609,7 @@
               Cicloescursione esperienziale nella Riserva Naturale Lago di Penne e verso Farindola, con soste dedicate,
               panorami sul Gran Sasso e sezione fotografica di repertorio.
             </p>
+            <div class="hero-note">🚴 Possibilità di partecipare con E-Bike a noleggio disponibile sul posto</div>
           </div>
         </div>
       </div>
@@ -592,7 +638,7 @@
         <div class="card">
           <div class="metrics">
             <div class="metric">
-              <span class="num">20</span>
+              <span class="num">30</span>
               <span class="label">km</span>
             </div>
             <div class="metric">
@@ -621,14 +667,14 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="info">
     <div class="wrap two-col">
       <div class="card">
         <h2>Info evento</h2>
         <div class="info-list">
           <div class="info-item">
             <strong>Tipo</strong>
-            <div>Anello — Cicloescursione Esperienziale</div>
+            <div>Anello - Cicloescursione Esperienziale</div>
           </div>
           <div class="info-item">
             <strong>Difficoltà tecnica</strong>
@@ -644,7 +690,7 @@
           </div>
           <div class="info-item">
             <strong>Ritrovo</strong>
-            <div>Ore 08:30 — Parcheggio Wolf Tour — Penne (PE)</div>
+            <div>Ore 08:30 - Parcheggio Wolf Tour - Penne (PE)</div>
           </div>
           <div class="info-item">
             <strong>Organizzatore</strong>
@@ -677,20 +723,87 @@
     <div class="wrap">
       <div class="card">
         <h2 class="section-title">Attività esperienziali</h2>
+
         <div class="experience-grid">
           <div class="experience-item">
-            <h3>🦅 Visita guidata — Riserva Naturale Lago di Penne</h3>
-            <p>Visita al centro visite e al lago artificiale sul Fiume Tavo, con focus su flora, fauna locale e avifauna stanziale e migratoria.</p>
+            <h3>🦅 Visita guidata - Riserva Naturale Lago di Penne</h3>
+            <p>
+              Visita al centro visite e al lago artificiale sul Fiume Tavo, con focus su flora,
+              fauna locale e avifauna stanziale e migratoria.
+            </p>
           </div>
+
           <div class="experience-item">
-            <h3>🧀 Sdijuno tradizionale — Pecorino di Farindola</h3>
-            <p>Degustazione del Pecorino di Farindola DOP e spuntino tradizionale in quota.</p>
+            <h3>🧀 Sdijuno tradizionale - Pecorino di Farindola</h3>
+            <p>
+              Degustazione del Pecorino di Farindola DOP e spuntino tradizionale in quota.
+            </p>
           </div>
+
           <div class="experience-item">
             <h3>📷 Foto e video di repertorio</h3>
-            <p>Area dedicata a guadi, lago, canoa e momento finale per trasmettere il carattere esperienziale dell’uscita.</p>
+            <p>
+              Area dedicata a guadi, lago, canoa e momento finale per trasmettere il carattere
+              esperienziale dell’uscita.
+            </p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ebike">
+    <div class="wrap">
+      <div class="card">
+        <h2 class="section-title">Affitto E-Bike - Wolf Tour Penne</h2>
+
+        <p>
+          È possibile partecipare all’escursione anche senza bici propria grazie al servizio di
+          <strong>noleggio E-Bike presso Wolf Tour Penne</strong>, direttamente nel punto di ritrovo.
+        </p>
+
+        <div class="info-list" style="margin-top:14px;">
+          <div class="info-item">
+            <strong>Posizione</strong>
+            <div>Parcheggio Wolf Tour - Penne (PE)</div>
+          </div>
+
+          <div class="info-item">
+            <strong>Costi noleggio</strong>
+            <div>
+              I prezzi variano in base al modello e alla durata del noleggio.
+              Consulta il listino aggiornato sul sito ufficiale.
+            </div>
+          </div>
+
+          <div class="info-item">
+            <strong>Prenotazione</strong>
+            <div>
+              La prenotazione è fortemente consigliata per garantire la disponibilità
+              delle E-Bike nel giorno dell’escursione.
+            </div>
+          </div>
+
+          <div class="info-item">
+            <strong>Tipologia bici</strong>
+            <div>E-Bike MTB e altri mezzi disponibili secondo disponibilità del noleggio</div>
+          </div>
+
+          <div class="info-item">
+            <strong>Ritiro bici</strong>
+            <div>Direttamente presso Wolf Tour Penne, punto di ritrovo dell’escursione</div>
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:16px; max-width:360px;">
+          <a class="btn primary" href="https://wolftour.it/it/equipments/" target="_blank" rel="noopener">🚴 Consulta prezzi e prenota</a>
+          <a class="btn secondary" href="tel:+393342317860">📞 Info escursione</a>
+        </div>
+
+        <p class="muted" style="margin-top:12px;">
+          Il noleggio E-Bike rende l’escursione accessibile anche a chi non è allenato
+          o non possiede una bici adatta.
+        </p>
       </div>
     </div>
   </section>
@@ -701,33 +814,34 @@
         <h2 class="section-title">Il Territorio: Cuore dell’Area Vestina</h2>
 
         <p>
-          L’area pedemontana che abbraccia Penne, Farindola e Montebello di Bertona, fino ai piedi di Rigopiano,
-          rappresenta uno dei paesaggi più autentici d’Abruzzo. Pedalare in questi luoghi significa attraversare
-          la storia geologica e culturale della regione, in un territorio dove l’acqua e la roccia hanno disegnato
-          percorsi millenari.
+          L’area pedemontana che abbraccia Penne, Farindola e Montebello di Bertona,
+          fino ai piedi di Rigopiano, rappresenta uno dei paesaggi più autentici d’Abruzzo.
+          Pedalare in questi luoghi significa attraversare la storia geologica e culturale della regione,
+          in un territorio dove l’acqua e la roccia hanno disegnato percorsi millenari.
         </p>
 
         <h3>🌊 Il Ruolo del Fiume Tavo</h3>
         <p>
-          Elemento centrale dell’itinerario è il Fiume Tavo, vera linfa vitale di questa terra. Risaliremo il suo corso
-          partendo dal bacino artificiale di Penne, dove le acque si calmano creando un ecosistema unico. Il fiume funge
-          da guida naturale nel paesaggio: dalle sponde ricche di vegetazione igrofila della Riserva si risale verso le
-          sue sorgenti pedemontane, dove il carattere del corso d’acqua diventa più selvaggio e incassato tra le rocce
-          del Vallone d’Angri, offrendo ai biker passaggi suggestivi e guadi che rinfrescano il cammino.
+          Elemento centrale dell’itinerario è il Fiume Tavo, vera linfa vitale di questa terra.
+          Risaliremo il suo corso partendo dal bacino artificiale di Penne, dove le acque si calmano
+          creando un ecosistema unico. Il fiume funge da guida naturale nel paesaggio:
+          dalle sponde ricche di vegetazione igrofila della Riserva si risale verso le sue sorgenti pedemontane,
+          dove il carattere del corso d’acqua diventa più selvaggio e incassato tra le rocce del Vallone d’Angri,
+          offrendo ai biker passaggi suggestivi e guadi che rinfrescano il cammino.
         </p>
 
         <h3>🏛️ Storia e Geografia</h3>
         <p>
-          L’area è l’antica culla del popolo dei Vestini. Penne, nota come la Città di Mattone, sorge su colli che
-          dominano la vallata, facendo da ponte tra il mare Adriatico e le imponenti vette del Gran Sasso.
-          Geograficamente, il territorio è un affascinante labirinto di calanchi e colline argillose che cedono
-          improvvisamente il passo a fitti boschi e pareti rocciose man mano che l’altitudine aumenta.
+          L’area è l’antica culla del popolo dei Vestini. Penne, nota come la Città di Mattone,
+          sorge su colli che dominano la vallata, facendo da ponte tra il mare Adriatico e le imponenti vette del Gran Sasso.
+          Geograficamente, il territorio è un affascinante labirinto di calanchi e colline argillose
+          che cedono improvvisamente il passo a fitti boschi e pareti rocciose man mano che l’altitudine aumenta.
         </p>
 
         <h3>🦅 Natura e Paesaggio</h3>
         <p>
-          Dalla Riserva Naturale Regionale Lago di Penne, oasi di biodiversità e punto di sosta fondamentale per
-          l’avifauna, il percorso si inerpica verso il Parco Nazionale del Gran Sasso e Monti della Laga.
+          Dalla Riserva Naturale Regionale Lago di Penne, oasi di biodiversità e punto di sosta fondamentale per l’avifauna,
+          il percorso si inerpica verso il Parco Nazionale del Gran Sasso e Monti della Laga.
           Il paesaggio muta drasticamente in pochi chilometri: dai canneti del lago ai pascoli d’alta quota,
           tra querce secolari e il volo dell’aquila reale che sorveglia la piana di Rigopiano.
         </p>
@@ -742,7 +856,7 @@
 
         <div class="quote-box">
           <blockquote>“Lu munn è fatte a scale, chi le scenn e chi le sale.”</blockquote>
-          <cite>(Il mondo è fatto a scale, c’è chi scende e c’è chi sale) — Setak, da <em>Quilli che n’Arrivano</em></cite>
+          <cite>(Il mondo è fatto a scale, c’è chi scende e c’è chi sale) - Setak, da <em>Quilli che n’Arrivano</em></cite>
         </div>
       </div>
     </div>
@@ -752,6 +866,7 @@
     <div class="wrap">
       <div class="card">
         <h2 class="section-title">Programma dettagliato</h2>
+
         <div class="table-wrap">
           <table>
             <thead>
@@ -767,13 +882,13 @@
                 <td>08:30</td>
                 <td>—</td>
                 <td>~380 m</td>
-                <td>Ritrovo Parcheggio Wolf Tour — verifica bici</td>
+                <td>Ritrovo Parcheggio Wolf Tour - verifica bici</td>
               </tr>
               <tr>
                 <td>08:45</td>
                 <td>—</td>
                 <td>~380 m</td>
-                <td>Briefing percorso — distribuzione traccia GPX e GeoResQ</td>
+                <td>Briefing percorso - distribuzione traccia GPX e GeoResQ</td>
               </tr>
               <tr>
                 <td>09:00</td>
@@ -791,7 +906,7 @@
                 <td>12:00</td>
                 <td>km 20</td>
                 <td>~760 m</td>
-                <td>Arrivo Farindola — sdijuno + pecorino</td>
+                <td>Arrivo Farindola - sdijuno + pecorino</td>
               </tr>
               <tr>
                 <td>14:00</td>
@@ -821,13 +936,15 @@
     <div class="wrap">
       <div class="card">
         <h2 class="section-title">GPX e strumenti</h2>
+
         <div class="tool-links">
           <a class="tool-link" href="#" target="_blank" rel="noopener">⬇ Scarica GPX</a>
           <a class="tool-link" href="#" target="_blank" rel="noopener">🗺 Apri su Komoot</a>
           <a class="tool-link" href="https://www.georesq.it/" target="_blank" rel="noopener">🆘 Sito GeoResQ</a>
           <a class="tool-link" href="#" target="_blank" rel="noopener">▶ GeoResQ su Google Play</a>
-          <a class="tool-link" href="#" target="_blank" rel="noopener">GeoResQ su App Store</a>
+          <a class="tool-link" href="#" target="_blank" rel="noopener"> GeoResQ su App Store</a>
         </div>
+
         <p class="muted" style="margin-top:16px;">
           La traccia GPX è un supporto alla navigazione. Scaricarla prima della partenza in modalità offline.
         </p>
@@ -838,19 +955,23 @@
   <section class="section" id="foto">
     <div class="wrap">
       <h2 class="section-title">Foto e video di repertorio</h2>
+
       <div class="gallery">
         <figure class="gallery-card">
           <img src="foto-lago-penne.jpg" alt="Biker sul Lago di Penne">
           <figcaption class="cap">Biker sul Lago di Penne</figcaption>
         </figure>
+
         <figure class="gallery-card">
           <img src="foto-guado-1.jpg" alt="Attraversamento del guado">
           <figcaption class="cap">Attraversamento del guado</figcaption>
         </figure>
+
         <figure class="gallery-card">
           <img src="foto-guado-2.jpg" alt="Gruppo nel guado">
           <figcaption class="cap">Gruppo nel guado</figcaption>
         </figure>
+
         <figure class="gallery-card">
           <img src="foto-canoa.jpg" alt="Esperienza in canoa sul lago">
           <figcaption class="cap">Esperienza in canoa sul lago</figcaption>
@@ -860,21 +981,9 @@
   </section>
 
   <section class="section">
-    <div class="wrap two-col">
-      <div class="share-box">
-        <h2>Condividi la tua esperienza</h2>
-        <p>
-          <a class="btn secondary" href="https://www.facebook.com/moreno.agnellini" target="_blank" rel="noopener">👍 Segui Moreno su Facebook</a>
-        </p>
-      </div>
-
-      <div class="spirit-box">
-        <h2>Spirito del progetto</h2>
-        <p>
-          Una foto racconta il lato conviviale dell’esperienza, il momento di condivisione che chiude ogni uscita
-          in modo autentico.
-        </p>
-        <p><strong>Momento conviviale finale del gruppo</strong></p>
+    <div class="wrap">
+      <div class="convivial-banner">
+        <img src="story-conviviale.jpg" alt="Momento conviviale finale del gruppo">
       </div>
     </div>
   </section>
@@ -883,6 +992,7 @@
     <div class="wrap">
       <div class="safety-box">
         <h2 class="section-title">Dotazione obbligatoria e sicurezza</h2>
+
         <ul class="check-list">
           <li>Almeno 1,5 L di acqua</li>
           <li>Kit riparazioni obbligatorio (camera d’aria, CO₂, multiutensile)</li>
@@ -892,9 +1002,10 @@
           <li>Traccia GPX scaricata offline prima della partenza</li>
           <li>App GeoResQ attiva durante l’escursione</li>
         </ul>
+
         <p class="muted" style="margin-top:16px;">
           L’uscita viene confermata in base a meteo, condizioni del fondo e stato reale del percorso.
-          La traccia GPX è un supporto, non sostituisce la valutazione sul campo da parte della guida.
+          La traccia GPX è un supporto e non sostituisce la valutazione sul campo da parte della guida.
         </p>
       </div>
     </div>
@@ -904,6 +1015,7 @@
     <div class="wrap">
       <div class="contacts-box">
         <h2 class="section-title">Contatti e iscrizioni</h2>
+
         <p>
           Per iscrizioni e informazioni contattare Moreno Agnellini via WhatsApp, email o telefono.
           Resta disponibile anche il profilo Facebook.
@@ -923,7 +1035,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      Gruppo Ciclo CAI Pescara · Abruzzo Exploring · Scheda evento — Anello Colline Vestine, 25 Aprile 2026
+      Gruppo Ciclo CAI Pescara · Abruzzo Exploring · Scheda evento - Anello Colline Vestine, 25 Aprile 2026
     </div>
   </footer>
 
