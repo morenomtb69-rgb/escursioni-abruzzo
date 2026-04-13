@@ -18,15 +18,12 @@
   --shadow: 0 12px 34px rgba(0,0,0,.10);
   --radius: 22px;
 }
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
-
 .wrap { width: min(1180px, calc(100% - 28px)); margin: 0 auto; }
-
 .topbar {
   position: sticky;
   top: 0;
@@ -54,7 +51,6 @@ img { max-width: 100%; display: block; }
 .brand small { display: block; font-weight: 700; letter-spacing: .02em; color: var(--accent); }
 .menu { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-weight: 700; }
 .menu a:hover { color: var(--accent); }
-
 .hero {
   min-height: 72vh;
   color: #fff;
@@ -86,7 +82,6 @@ img { max-width: 100%; display: block; }
 h1 { margin: 0 0 10px; font-size: clamp(38px,6vw,66px); line-height: 1.02; }
 .hero h2 { margin: 0 0 10px; font-size: clamp(24px,3vw,38px); font-weight: 400; }
 .hero .lead { margin: 0; font-size: clamp(18px,2.2vw,28px); opacity: .95; }
-
 .hero-panel {
   background: rgba(255,255,255,.14);
   border: 1px solid rgba(255,255,255,.18);
@@ -104,7 +99,6 @@ h1 { margin: 0 0 10px; font-size: clamp(38px,6vw,66px); line-height: 1.02; }
   margin-bottom: 14px;
 }
 .hero-actions { display: grid; gap: 12px; margin-top: 8px; }
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -122,17 +116,13 @@ h1 { margin: 0 0 10px; font-size: clamp(38px,6vw,66px); line-height: 1.02; }
 .btn-primary  { background: #56bf4e; color: #fff; }
 .btn-secondary { background: #fff; color: var(--accent); }
 .btn-outline  { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.38); }
-
 .contact-mini {
   margin-top: 12px;
   font-size: 14px;
   line-height: 1.7;
   color: rgba(255,255,255,.95);
 }
-.contact-mini a {
-  text-decoration: underline;
-}
-
+.contact-mini a { text-decoration: underline; }
 .quickstats {
   display: grid;
   grid-template-columns: repeat(6,1fr);
@@ -150,7 +140,6 @@ h1 { margin: 0 0 10px; font-size: clamp(38px,6vw,66px); line-height: 1.02; }
 }
 .stat strong { display: block; font-size: 30px; line-height: 1; margin-bottom: 8px; color: var(--accent); }
 .stat span   { color: var(--muted); font-weight: 700; font-size: 14px; }
-
 .section { padding: 42px 0; }
 .grid-main {
   display: grid;
@@ -159,14 +148,11 @@ h1 { margin: 0 0 10px; font-size: clamp(38px,6vw,66px); line-height: 1.02; }
 }
 .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
 .card h3 { margin: 0 0 16px; font-size: 28px; }
-
 .meta-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
 .meta-grid div { background: var(--soft); border-radius: 16px; padding: 14px; }
 .meta-grid span { display: block; color: var(--muted); font-size: 14px; margin-bottom: 4px; }
-
 .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
 .badge { background: var(--soft2); border-radius: 999px; padding: 9px 12px; font-weight: 700; color: #5b532f; }
-
 .experience-list { display: grid; gap: 14px; }
 .experience {
   background: linear-gradient(180deg,#fbfcf9,#f1f6ef);
@@ -175,15 +161,12 @@ h1 { margin: 0 0 10px; font-size: clamp(38px,6vw,66px); line-height: 1.02; }
   padding: 16px;
 }
 .experience strong { display: block; margin-bottom: 6px; }
-
 table { width: 100%; border-collapse: collapse; }
 th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { color: var(--muted); font-size: 14px; }
-
 .profile-wrap { margin-top: 24px; }
 .profile-wrap h4 { font-size: 18px; margin: 0 0 12px; color: var(--ink); font-weight: 700; }
 .profile-wrap img { border-radius: 16px; width: 100%; object-fit: contain; box-shadow: 0 4px 18px rgba(0,0,0,.08); }
-
 .gallery-shell {
   display: grid;
   grid-template-columns: 1.25fr .75fr;
@@ -210,17 +193,23 @@ th { color: var(--muted); font-size: 14px; }
   background: linear-gradient(transparent, rgba(0,0,0,.58));
 }
 .story-box img { border-radius: 18px; margin-top: 16px; aspect-ratio: 4/5; object-fit: cover; }
-
 .footer { padding: 30px 0 60px; color: var(--muted); font-size: 14px; }
 .notice { margin-top: 14px; font-size: 14px; color: #6b6241; font-style: italic; }
-
 .sticky-tools { position: fixed; right: 18px; bottom: 18px; display: grid; gap: 10px; z-index: 30; }
 .floating { border-radius: 999px; padding: 14px 20px; box-shadow: var(--shadow); }
-
+/* TERRITORIO */
+.territorio-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin-top: 24px; }
+.territorio-block { background: var(--soft); border-radius: 18px; padding: 20px; }
+.territorio-block h4 { margin: 0 0 10px; font-size: 18px; color: var(--accent); }
+.territorio-block p { margin: 0; font-size: 15px; line-height: 1.7; }
+.citazione { margin-top: 28px; background: var(--soft2); border-left: 5px solid var(--accent); border-radius: 0 18px 18px 0; padding: 20px 24px; }
+.citazione blockquote { margin: 0; font-size: 17px; font-style: italic; line-height: 1.7; color: var(--ink); }
+.citazione cite { display: block; margin-top: 10px; font-size: 14px; color: var(--muted); font-style: normal; font-weight: 700; }
 @media (max-width: 980px) {
   .hero-grid, .grid-main, .gallery-shell { grid-template-columns: 1fr; }
   .quickstats { grid-template-columns: repeat(3,1fr); margin-top: 18px; }
 }
+@media (max-width: 780px) { .territorio-grid { grid-template-columns: 1fr; } }
 @media (max-width: 640px) {
   .menu { display: none; }
   .meta-grid, .gallery-grid { grid-template-columns: 1fr; }
@@ -241,6 +230,7 @@ th { color: var(--muted); font-size: 14px; }
       <a href="#evento">Evento</a>
       <a href="#programma">Programma</a>
       <a href="#foto-video">Foto e Video</a>
+      <a href="#territorio">Territorio</a>
       <a href="#gpx">GPX</a>
       <a href="#sicurezza">Sicurezza</a>
     </nav>
@@ -264,16 +254,12 @@ th { color: var(--muted); font-size: 14px; }
           <a class="btn btn-primary"
              href="https://wa.me/393342317860?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20e%20iscrivermi%20all%27escursione%20Anello%20Colline%20Vestine%20del%2025%20aprile%202026."
              target="_blank" rel="noopener noreferrer">📲 Iscriviti su WhatsApp</a>
-
           <a class="btn btn-secondary"
-             href="mailto:morenomtb69@gmail.com?subject=Richiesta%20info%20Anello%20Colline%20Vestine&body=Buongiorno%2C%0Avorrei%20ricevere%20informazioni%20sull%27escursione%20Anello%20Colline%20Vestine%20del%2025%20aprile%202026.%0A%0AGrazie."
-             >📧 Scrivi via Email</a>
-
+             href="mailto:morenomtb69@gmail.com?subject=Richiesta%20info%20Anello%20Colline%20Vestine&body=Buongiorno%2C%0Avorrei%20ricevere%20informazioni%20sull%27escursione%20Anello%20Colline%20Vestine%20del%2025%20aprile%202026.%0A%0AGrazie.">📧 Scrivi via Email</a>
           <a class="btn btn-outline"
              href="https://www.facebook.com/moreno.agnellini"
              target="_blank" rel="noopener noreferrer">👍 Profilo Facebook</a>
         </div>
-
         <div class="contact-mini">
           <strong>Contatti rapidi:</strong><br>
           Tel. e WhatsApp: <a href="tel:+393342317860">334 2317860</a><br>
@@ -285,11 +271,11 @@ th { color: var(--muted); font-size: 14px; }
 </section>
 
 <section class="wrap quickstats">
-  <div class="stat"><strong>30</strong><span>km</span></div>
-  <div class="stat"><strong>600</strong><span>D+ m</span></div>
+  <div class="stat"><strong>20</strong><span>km</span></div>
+  <div class="stat"><strong>500</strong><span>D+ m</span></div>
   <div class="stat"><strong>270</strong><span>quota min</span></div>
   <div class="stat"><strong>760</strong><span>quota max</span></div>
-  <div class="stat"><strong>~5h</strong><span>durata</span></div>
+  <div class="stat"><strong>~4h</strong><span>durata</span></div>
   <div class="stat"><strong>20</strong><span>max partecipanti</span></div>
 </section>
 
@@ -332,6 +318,40 @@ th { color: var(--muted); font-size: 14px; }
   </div>
 </section>
 
+<section class="section" id="territorio">
+  <div class="wrap">
+    <div class="card">
+      <h3>Il Territorio: Cuore dell&rsquo;Area Vestina</h3>
+      <p style="font-size:16px;line-height:1.8;">L&rsquo;area pedemontana che abbraccia Penne, Farindola e Montebello di Bertona, fino ai piedi di Rigopiano, rappresenta uno dei paesaggi più autentici d&rsquo;Abruzzo. Pedalare in questi luoghi significa attraversare la storia geologica e culturale della regione, in un territorio dove l&rsquo;acqua e la roccia hanno disegnato percorsi millenari.</p>
+      <div class="territorio-grid">
+        <div class="territorio-block">
+          <h4>🌊 Il Ruolo del Fiume Tavo</h4>
+          <p>Elemento centrale dell&rsquo;itinerario è il Fiume Tavo, vera linfa vitale di questa terra. Risaliremo il suo corso partendo dal bacino artificiale di Penne, dove le acque si calmano creando un ecosistema unico. Il fiume funge da guida naturale nel paesaggio: dalle sponde ricche di vegetazione igrofila della Riserva si risale verso le sue sorgenti pedemontane, dove il carattere del corso d&rsquo;acqua diventa più selvaggio e incassato tra le rocce del Vallone d&rsquo;Angri, offrendo ai biker passaggi suggestivi e guadi che rinfrescano il cammino.</p>
+        </div>
+        <div class="territorio-block">
+          <h4>🏛️ Storia e Geografia</h4>
+          <p>L&rsquo;area è l&rsquo;antica culla del popolo dei Vestini. Penne, nota come la <em>Città di Mattone</em>, sorge su colli che dominano la vallata, facendo da ponte tra il mare Adriatico e le imponenti vette del Gran Sasso. Geograficamente, il territorio è un affascinante labirinto di calanchi e colline argillose che cedono improvvisamente il passo a fitti boschi e pareti rocciose man mano che l&rsquo;altitudine aumenta.</p>
+        </div>
+        <div class="territorio-block">
+          <h4>🦅 Natura e Paesaggio</h4>
+          <p>Dalla Riserva Naturale Regionale Lago di Penne, oasi di biodiversità e punto di sosta fondamentale per l&rsquo;avifauna, il percorso si inerpica verso il Parco Nazionale del Gran Sasso e Monti della Laga. Il paesaggio muta drasticamente in pochi chilometri: dai canneti del lago ai pascoli d&rsquo;alta quota, tra querce secolari e il volo dell&rsquo;aquila reale che sorveglia la piana di Rigopiano.</p>
+        </div>
+        <div class="territorio-block">
+          <h4>🧀 Enogastronomia: L&rsquo;Anima dello Sdijuno</h4>
+          <p>Questa è la terra del Pecorino di Farindola, un&rsquo;eccellenza millenaria nota per essere l&rsquo;unico formaggio al mondo preparato con caglio di maiale. Insieme all&rsquo;olio extravergine d&rsquo;oliva delle Colline Vestine DOP e ai vini intensi come il Montepulciano d&rsquo;Abruzzo, questi sapori rappresentano l&rsquo;anima dello <em>sdijuno</em>. Non un semplice spuntino, ma un rito sacro di condivisione, forza e appartenenza alla terra.</p>
+        </div>
+      </div>
+      <div class="citazione">
+        <blockquote>
+          &ldquo;Lu munn è fatte a scale, chi le scenn e chi le sale.&rdquo;
+          <br><em style="font-size:14px;">(Il mondo è fatto a scale, c&rsquo;è chi scende e c&rsquo;è chi sale)</em>
+        </blockquote>
+        <cite>&mdash; Setak, da <em>Quilli che n&rsquo;Arrivano</em></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="programma">
   <div class="wrap grid-main">
     <div class="card">
@@ -346,130 +366,4 @@ th { color: var(--muted); font-size: 14px; }
           </tr>
         </thead>
         <tbody>
-          <tr><td>08:30</td><td>&mdash;</td><td>~380 m</td><td>Ritrovo Parcheggio Wolf Tour &mdash; verifica bici</td></tr>
-          <tr><td>08:45</td><td>&mdash;</td><td>~380 m</td><td>Briefing percorso &mdash; distribuzione traccia GPX e GeoResq</td></tr>
-          <tr><td>09:00</td><td>km 0</td><td>~380 m</td><td>Partenza</td></tr>
-          <tr><td>09:45</td><td>km 7</td><td>~270 m</td><td>Sosta visita Riserva Naturale</td></tr>
-          <tr><td>12:00</td><td>km 20</td><td>~760 m</td><td>Arrivo Farindola &mdash; sdijuno + pecorino</td></tr>
-          <tr><td>14:00</td><td>km 30</td><td>~380 m</td><td>Rientro a Penne</td></tr>
-        </tbody>
-      </table>
-      <div class="profile-wrap">
-        <h4>Profilo altimetrico</h4>
-        <img src="profilo-altimetrico.jpg" alt="Profilo altimetrico Anello Colline Vestine">
-      </div>
-    </div>
-    <div class="card" id="gpx">
-      <h3>GPX e strumenti</h3>
-      <div class="experience-list">
-        <a class="btn btn-secondary"
-           href="mtb-penne-farindola-penne.gpx"
-           download>⬇ Scarica GPX</a>
-        <a class="btn btn-secondary"
-           href="https://www.komoot.com/tour/2881863543"
-           target="_blank" rel="noopener noreferrer">🗺 Apri su Komoot</a>
-        <a class="btn btn-secondary"
-           href="https://web.georesq.it/"
-           target="_blank" rel="noopener noreferrer">🆘 Sito GeoResQ</a>
-        <a class="btn btn-secondary"
-           href="https://play.google.com/store/apps/details?id=it.georesq"
-           target="_blank" rel="noopener noreferrer">▶ GeoResQ su Google Play</a>
-        <a class="btn btn-secondary"
-           href="https://apps.apple.com/it/app/georesq/id1465217102"
-           target="_blank" rel="noopener noreferrer"> GeoResQ su App Store</a>
-      </div>
-      <p class="notice">La traccia GPX è un supporto alla navigazione. Scaricarla prima della partenza in modalità offline.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="foto-video">
-  <div class="wrap gallery-shell">
-    <div class="card">
-      <h3>Foto e video di repertorio</h3>
-      <div class="gallery-grid">
-        <figure class="gallery-card">
-          <img src="gallery-lago-bike.jpg" alt="Biker sul Lago di Penne">
-          <figcaption>Biker sul Lago di Penne</figcaption>
-        </figure>
-        <figure class="gallery-card">
-          <img src="gallery-guado-front.jpg" alt="Attraversamento del guado">
-          <figcaption>Attraversamento del guado</figcaption>
-        </figure>
-        <figure class="gallery-card">
-          <img src="gallery-guado-group.jpg" alt="Gruppo nel guado">
-          <figcaption>Gruppo nel guado</figcaption>
-        </figure>
-        <figure class="gallery-card">
-          <img src="gallery-canoa.jpg" alt="Esperienza in canoa sul lago">
-          <figcaption>Esperienza in canoa sul lago</figcaption>
-        </figure>
-      </div>
-    </div>
-    <div class="card">
-      <h3>Condividi la tua esperienza</h3>
-      <a class="btn btn-secondary"
-         href="https://www.facebook.com/moreno.agnellini"
-         target="_blank" rel="noopener noreferrer">👍 Segui Moreno su Facebook</a>
-      <div class="story-box">
-        <h3 style="font-size:22px;margin-top:24px;margin-bottom:8px;">Spirito del progetto</h3>
-        <p>Una foto racconta il lato conviviale dell&rsquo;esperienza, il momento di condivisione che chiude ogni uscita in modo autentico.</p>
-        <img src="story-conviviale.jpg" alt="Momento conviviale finale del gruppo">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="sicurezza">
-  <div class="wrap grid-main">
-    <div class="card">
-      <h3>Dotazione obbligatoria e sicurezza</h3>
-      <ul style="margin:0;padding-left:20px;line-height:2;">
-        <li>Almeno 1,5 L di acqua</li>
-        <li>Kit riparazioni obbligatorio (camera d&rsquo;aria, CO&#8322;, multiutensile)</li>
-        <li>Casco obbligatorio</li>
-        <li>Scarpe SPD o simili consigliate</li>
-        <li>Abbigliamento a strati (mattina fresca in quota)</li>
-        <li>Traccia GPX scaricata offline prima della partenza</li>
-        <li>App GeoResQ attiva durante l&rsquo;escursione</li>
-      </ul>
-      <p class="notice">L&rsquo;uscita viene confermata in base a meteo, condizioni del fondo e stato reale del percorso. La traccia GPX è un supporto, non sostituisce la valutazione sul campo da parte della guida.</p>
-    </div>
-    <div class="card">
-      <h3>Contatti e iscrizioni</h3>
-      <p>Per iscrizioni e informazioni contattare Moreno Agnellini via WhatsApp, email o telefono. Resta disponibile anche il profilo Facebook.</p>
-      <div class="experience-list" style="margin-top:16px;">
-        <a class="btn btn-primary"
-           href="https://wa.me/393342317860?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20e%20iscrivermi%20all%27escursione%20Anello%20Colline%20Vestine%20del%2025%20aprile%202026."
-           target="_blank" rel="noopener noreferrer">📲 Iscriviti su WhatsApp</a>
-
-        <a class="btn btn-secondary"
-           href="mailto:morenomtb69@gmail.com?subject=Richiesta%20info%20Anello%20Colline%20Vestine&body=Buongiorno%2C%0Avorrei%20ricevere%20informazioni%20sull%27escursione%20Anello%20Colline%20Vestine%20del%2025%20aprile%202026.%0A%0AGrazie."
-           >📧 Scrivi via Email</a>
-
-        <a class="btn btn-secondary"
-           href="tel:+393342317860">📞 334 2317860</a>
-
-        <a class="btn btn-secondary"
-           href="https://www.facebook.com/moreno.agnellini"
-           target="_blank" rel="noopener noreferrer">👍 Profilo Facebook</a>
-      </div>
-      <p class="notice">Email: morenomtb69@gmail.com</p>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="wrap">
-    Gruppo Ciclo CAI Pescara &middot; Abruzzo Exploring &middot; Scheda evento &mdash; Anello Colline Vestine, 25 Aprile 2026
-  </div>
-</footer>
-
-<div class="sticky-tools">
-  <a class="btn btn-primary floating"
-     href="https://wa.me/393342317860?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20e%20iscrivermi%20all%27escursione%20Anello%20Colline%20Vestine%20del%2025%20aprile%202026."
-     target="_blank" rel="noopener noreferrer">📲 WhatsApp</a>
-</div>
-
-</body>
-</html>
+          <tr><td>08:30</td><td>&mdash;</td><td>~
