@@ -1,369 +1,592 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anello Colline Vestine | Gruppo Ciclo CAI Pescara</title>
-<meta name="description" content="Scheda escursione cicloturistica — Anello Colline Vestine, Riserva Lago di Penne — Farindola. Gruppo Ciclo CAI Pescara.">
-<style>
-:root {
-  --bg: #f5f3ee;
-  --card: #fff;
-  --ink: #203127;
-  --muted: #627064;
-  --line: #d9dfd6;
-  --accent: #315f3b;
-  --soft: #eaf1e8;
-  --soft2: #f3edd1;
-  --shadow: 0 12px 34px rgba(0,0,0,.10);
-  --radius: 22px;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-.wrap { width: min(1180px, calc(100% - 28px)); margin: 0 auto; }
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(250,248,243,.95);
-  border-bottom: 1px solid rgba(0,0,0,.06);
-  backdrop-filter: blur(10px);
-}
-.topbar-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  padding: 14px 0;
-}
-.brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
-.brand-badge {
-  width: 46px; height: 46px;
-  border-radius: 50%;
-  background: var(--soft);
-  display: grid;
-  place-items: center;
-  font-size: 22px;
-}
-.brand small { display: block; font-weight: 700; letter-spacing: .02em; color: var(--accent); }
-.menu { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-weight: 700; }
-.menu a:hover { color: var(--accent); }
-.hero {
-  min-height: 72vh;
-  color: #fff;
-  background: linear-gradient(rgba(14,20,16,.28), rgba(14,20,16,.55)),
-              url('banner-lago-penne.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: flex-end;
-}
-.hero-inner {
-  padding: 52px 0 34px;
-  width: min(1180px, calc(100% - 28px));
-  margin: 0 auto;
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.55fr .85fr;
-  gap: 22px;
-  align-items: end;
-}
-.kicker {
-  display: inline-block;
-  padding: 9px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.14);
-  border: 1px solid rgba(255,255,255,.22);
-  font-size: 14px;
-  margin-bottom: 14px;
-}
-h1 { margin: 0 0 10px; font-size: clamp(38px,6vw,66px); line-height: 1.02; }
-.hero h2 { margin: 0 0 10px; font-size: clamp(24px,3vw,38px); font-weight: 400; }
-.hero .lead { margin: 0; font-size: clamp(18px,2.2vw,28px); opacity: .95; }
-.hero-panel {
-  background: rgba(255,255,255,.14);
-  border: 1px solid rgba(255,255,255,.18);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  padding: 20px;
-}
-.status {
-  display: inline-block;
-  background: rgba(45,97,61,.86);
-  padding: 10px 14px;
-  border-radius: 999px;
-  font-weight: 700;
-  margin-bottom: 14px;
-}
-.hero-actions { display: grid; gap: 12px; margin-top: 8px; }
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  border: none;
-  border-radius: 14px;
-  padding: 14px 18px;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 15px;
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
-.btn-primary  { background: #56bf4e; color: #fff; }
-.btn-secondary { background: #fff; color: var(--accent); }
-.btn-outline  { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.38); }
-.contact-mini {
-  margin-top: 12px;
-  font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255,255,255,.95);
-}
-.contact-mini a { text-decoration: underline; }
-.quickstats {
-  display: grid;
-  grid-template-columns: repeat(6,1fr);
-  gap: 14px;
-  margin-top: -32px;
-  position: relative;
-  z-index: 3;
-}
-.stat {
-  background: var(--card);
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  padding: 18px 16px;
-  text-align: center;
-}
-.stat strong { display: block; font-size: 30px; line-height: 1; margin-bottom: 8px; color: var(--accent); }
-.stat span   { color: var(--muted); font-weight: 700; font-size: 14px; }
-.section { padding: 42px 0; }
-.grid-main {
-  display: grid;
-  grid-template-columns: 1.35fr .75fr;
-  gap: 24px;
-}
-.card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
-.card h3 { margin: 0 0 16px; font-size: 28px; }
-.meta-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
-.meta-grid div { background: var(--soft); border-radius: 16px; padding: 14px; }
-.meta-grid span { display: block; color: var(--muted); font-size: 14px; margin-bottom: 4px; }
-.badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
-.badge { background: var(--soft2); border-radius: 999px; padding: 9px 12px; font-weight: 700; color: #5b532f; }
-.experience-list { display: grid; gap: 14px; }
-.experience {
-  background: linear-gradient(180deg,#fbfcf9,#f1f6ef);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 16px;
-}
-.experience strong { display: block; margin-bottom: 6px; }
-table { width: 100%; border-collapse: collapse; }
-th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
-th { color: var(--muted); font-size: 14px; }
-.profile-wrap { margin-top: 24px; }
-.profile-wrap h4 { font-size: 18px; margin: 0 0 12px; color: var(--ink); font-weight: 700; }
-.profile-wrap img { border-radius: 16px; width: 100%; object-fit: contain; box-shadow: 0 4px 18px rgba(0,0,0,.08); }
-.gallery-shell {
-  display: grid;
-  grid-template-columns: 1.25fr .75fr;
-  gap: 24px;
-  align-items: start;
-}
-.gallery-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
-.gallery-card {
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  background: #ddd;
-  box-shadow: var(--shadow);
-}
-.gallery-card img { width: 100%; height: 100%; aspect-ratio: 4/3; object-fit: cover; }
-.gallery-card figcaption {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 12px 14px;
-  color: #fff;
-  font-weight: 700;
-  font-size: 14px;
-  background: linear-gradient(transparent, rgba(0,0,0,.58));
-}
-.story-box img { border-radius: 18px; margin-top: 16px; aspect-ratio: 4/5; object-fit: cover; }
-.footer { padding: 30px 0 60px; color: var(--muted); font-size: 14px; }
-.notice { margin-top: 14px; font-size: 14px; color: #6b6241; font-style: italic; }
-.sticky-tools { position: fixed; right: 18px; bottom: 18px; display: grid; gap: 10px; z-index: 30; }
-.floating { border-radius: 999px; padding: 14px 20px; box-shadow: var(--shadow); }
-/* TERRITORIO */
-.territorio-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin-top: 24px; }
-.territorio-block { background: var(--soft); border-radius: 18px; padding: 20px; }
-.territorio-block h4 { margin: 0 0 10px; font-size: 18px; color: var(--accent); }
-.territorio-block p { margin: 0; font-size: 15px; line-height: 1.7; }
-.citazione { margin-top: 28px; background: var(--soft2); border-left: 5px solid var(--accent); border-radius: 0 18px 18px 0; padding: 20px 24px; }
-.citazione blockquote { margin: 0; font-size: 17px; font-style: italic; line-height: 1.7; color: var(--ink); }
-.citazione cite { display: block; margin-top: 10px; font-size: 14px; color: var(--muted); font-style: normal; font-weight: 700; }
-@media (max-width: 980px) {
-  .hero-grid, .grid-main, .gallery-shell { grid-template-columns: 1fr; }
-  .quickstats { grid-template-columns: repeat(3,1fr); margin-top: 18px; }
-}
-@media (max-width: 780px) { .territorio-grid { grid-template-columns: 1fr; } }
-@media (max-width: 640px) {
-  .menu { display: none; }
-  .meta-grid, .gallery-grid { grid-template-columns: 1fr; }
-  .hero { min-height: 66vh; }
-  .quickstats { grid-template-columns: repeat(2,1fr); }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anello Colline Vestine | Gruppo Ciclo CAI Pescara</title>
+  <meta name="description" content="Scheda escursione cicloturistica — Anello Colline Vestine, Riserva Lago di Penne, Farindola e Area Vestina. Gruppo Ciclo CAI Pescara.">
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --card: #ffffff;
+      --ink: #203127;
+      --muted: #627064;
+      --line: #d9dfd6;
+      --accent: #315f3b;
+      --soft: #eaf1e8;
+      --soft2: #f3edd1;
+      --shadow: 0 12px 34px rgba(0,0,0,.10);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(245,243,238,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    .topbar .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      font-size: 14px;
+      color: var(--ink);
+      opacity: .9;
+    }
+
+    .hero {
+      padding: 34px 0 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.55fr .95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-photo {
+      position: relative;
+      min-height: 520px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #d7ddd3;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(18,27,22,.58), rgba(18,27,22,.10) 45%, rgba(18,27,22,.00));
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+    }
+
+    .hero-title {
+      color: #fff;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.18);
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: .3px;
+      margin-bottom: 12px;
+    }
+
+    .hero-title h1 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.05;
+    }
+
+    .hero-title p {
+      margin: 0;
+      font-size: 16px;
+      color: rgba(255,255,255,.92);
+      max-width: 62ch;
+    }
+
+    .side-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      background: var(--soft);
+      border: 1px solid #dce7d8;
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .3px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      border: 1px solid transparent;
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .section {
+      padding: 12px 0 26px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .info-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .territory-text h3 {
+      margin: 22px 0 8px;
+      font-size: 20px;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    .territory-text h3:first-child {
+      margin-top: 0;
+    }
+
+    .territory-text p {
+      margin: 0 0 14px;
+      color: var(--ink);
+    }
+
+    .quote-box {
+      margin-top: 22px;
+      padding: 18px 20px;
+      background: var(--soft2);
+      border-radius: 18px;
+      border: 1px solid #eadfa8;
+    }
+
+    .quote-box blockquote {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    .quote-box cite {
+      font-style: normal;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery .card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .gallery img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .footer {
+      padding: 20px 0 36px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(var(--max), calc(100% - 20px));
+      }
+
+      .topbar .wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-photo {
+        min-height: 340px;
+      }
+
+      .hero-overlay {
+        padding: 20px;
+      }
+
+      .hero-title p {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="wrap topbar-inner">
-    <div class="brand">
-      <div class="brand-badge">🚵</div>
-      <div>Escursioni<br><small>ABRUZZO EXPLORING</small></div>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">Gruppo Ciclo CAI Pescara</div>
+      <nav class="nav">
+        <a href="#evento">Evento</a>
+        <a href="#programma">Programma</a>
+        <a href="#territorio">Territorio</a>
+        <a href="#foto">Foto e Video</a>
+        <a href="#gpx">GPX</a>
+        <a href="#sicurezza">Sicurezza</a>
+      </nav>
     </div>
-    <nav class="menu">
-      <a href="#evento">Evento</a>
-      <a href="#programma">Programma</a>
-      <a href="#foto-video">Foto e Video</a>
-      <a href="#territorio">Territorio</a>
-      <a href="#gpx">GPX</a>
-      <a href="#sicurezza">Sicurezza</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-grid">
-      <div>
-        <div class="kicker">Sabato 25 Aprile 2026 &middot; Festa della Liberazione</div>
-        <h2>Cicloescursione Esperienziale</h2>
-        <h1>Anello Colline Vestine</h1>
-        <p class="lead">Riserva Naturale Lago di Penne &mdash; Farindola</p>
-        <p class="lead" style="font-weight:700;margin-top:8px;">Gruppo Ciclo CAI Pescara</p>
-      </div>
-      <aside class="hero-panel">
-        <div class="status">Stato: Aperto</div>
-        <p style="font-size:15px;opacity:.95;margin:0 0 14px;">Escursione con soste esperienziali, panorami sul Gran Sasso e sezione fotografica dedicata.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary"
-             href="https://wa.me/393342317860?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20e%20iscrivermi%20all%27escursione%20Anello%20Colline%20Vestine%20del%2025%20aprile%202026."
-             target="_blank" rel="noopener noreferrer">📲 Iscriviti su WhatsApp</a>
-          <a class="btn btn-secondary"
-             href="mailto:morenomtb69@gmail.com?subject=Richiesta%20info%20Anello%20Colline%20Vestine&body=Buongiorno%2C%0Avorrei%20ricevere%20informazioni%20sull%27escursione%20Anello%20Colline%20Vestine%20del%2025%20aprile%202026.%0A%0AGrazie.">📧 Scrivi via Email</a>
-          <a class="btn btn-outline"
-             href="https://www.facebook.com/moreno.agnellini"
-             target="_blank" rel="noopener noreferrer">👍 Profilo Facebook</a>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-photo">
+        <img src="foto-hero.jpg" alt="Panorama dell'Area Vestina tra Penne, Farindola e Rigopiano">
+        <div class="hero-overlay">
+          <div class="hero-title">
+            <div class="eyebrow">Cicloescursionismo CAI</div>
+            <h1>Anello Colline Vestine</h1>
+            <p>
+              Un itinerario cicloturistico tra il Lago di Penne, il Fiume Tavo e le terre alte di Farindola,
+              nel cuore autentico dell'Area Vestina.
+            </p>
+          </div>
         </div>
-        <div class="contact-mini">
-          <strong>Contatti rapidi:</strong><br>
-          Tel. e WhatsApp: <a href="tel:+393342317860">334 2317860</a><br>
-          Email: <a href="mailto:morenomtb69@gmail.com">morenomtb69@gmail.com</a>
+      </div>
+
+      <aside class="side-panel">
+        <div class="card" id="evento">
+          <h2>Dati essenziali</h2>
+          <div class="metrics">
+            <div class="metric">
+              <strong>Difficoltà</strong>
+              <span>TC / MC</span>
+            </div>
+            <div class="metric">
+              <strong>Sviluppo</strong>
+              <span>da inserire</span>
+            </div>
+            <div class="metric">
+              <strong>Dislivello</strong>
+              <span>da inserire</span>
+            </div>
+            <div class="metric">
+              <strong>Durata</strong>
+              <span>da inserire</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Azioni rapide</h2>
+          <div class="actions">
+            <a class="btn" href="https://wa.me/393342317860" target="_blank" rel="noopener">Iscriviti su WhatsApp</a>
+            <a class="btn secondary" href="mailto:inserisci@email.it">Scrivi via Email</a>
+            <a class="btn secondary" href="https://www.facebook.com/moreno.agnellini" target="_blank" rel="noopener">Profilo Facebook</a>
+          </div>
         </div>
       </aside>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="wrap quickstats">
-  <div class="stat"><strong>20</strong><span>km</span></div>
-  <div class="stat"><strong>500</strong><span>D+ m</span></div>
-  <div class="stat"><strong>270</strong><span>quota min</span></div>
-  <div class="stat"><strong>760</strong><span>quota max</span></div>
-  <div class="stat"><strong>~4h</strong><span>durata</span></div>
-  <div class="stat"><strong>20</strong><span>max partecipanti</span></div>
-</section>
+  <section class="section" id="programma">
+    <div class="wrap section-grid">
+      <div class="card">
+        <h2>Programma</h2>
+        <div class="info-list">
+          <div class="info-item">
+            <strong>Ritrovo</strong>
+            <div class="muted">Da inserire</div>
+          </div>
+          <div class="info-item">
+            <strong>Briefing</strong>
+            <div class="muted">Da inserire</div>
+          </div>
+          <div class="info-item">
+            <strong>Partenza</strong>
+            <div class="muted">Da inserire</div>
+          </div>
+          <div class="info-item">
+            <strong>Note</strong>
+            <div class="muted">Portare casco, kit riparazione, acqua, abbigliamento adeguato e bici in ordine.</div>
+          </div>
+        </div>
+      </div>
 
-<section class="section" id="evento">
-  <div class="wrap grid-main">
-    <div class="card">
-      <h3>Info evento</h3>
-      <div class="meta-grid">
-        <div><span>Tipo</span><strong>Anello &mdash; Cicloescursione Esperienziale</strong></div>
-        <div><span>Difficoltà tecnica</span><strong>MC / MC</strong></div>
-        <div><span>Fondo</span><strong>Misto: sterrato 70% + asfalto 30%</strong></div>
-        <div><span>Bici ammesse</span><strong>MTB / Gravel / E-Bike</strong></div>
-        <div><span>Ritrovo</span><strong>Ore 08:30 &mdash; Parcheggio Wolf Tour &mdash; Penne (PE)</strong></div>
-        <div><span>Organizzatore</span><strong>Moreno Agnellini</strong></div>
-      </div>
-      <div class="badge-row">
-        <span class="badge">Soci CAI &euro; 10</span>
-        <span class="badge">Non soci &euro; 20</span>
-        <span class="badge">CAI &mdash; copertura giornaliera per non soci</span>
-      </div>
-      <p style="margin-top:18px;">L&rsquo;escursione unisce pedalata, visita naturalistica, attraversamenti e momento conviviale. Un percorso ad anello tra le colline vestine con vista sul Gran Sasso e sosta al Lago di Penne.</p>
-    </div>
-    <div class="card">
-      <h3>Attività esperienziali</h3>
-      <div class="experience-list">
-        <div class="experience">
-          <strong>🦅 Visita guidata &mdash; Riserva Naturale Lago di Penne</strong>
-          Visita al centro visite e al lago artificiale sul Fiume Tavo, con focus su flora, fauna locale e avifauna stanziale e migratoria.
-        </div>
-        <div class="experience">
-          <strong>🧀 Sdijuno tradizionale &mdash; Pecorino di Farindola</strong>
-          Degustazione del Pecorino di Farindola DOP e spuntino tradizionale in quota.
-        </div>
-        <div class="experience">
-          <strong>📷 Foto e video di repertorio</strong>
-          Area dedicata a guadi, lago, canoa e momento finale per trasmettere il carattere esperienziale dell&rsquo;uscita.
+      <div class="card">
+        <h2>Informazioni utili</h2>
+        <div class="info-list">
+          <div class="info-item">
+            <strong>Traccia GPX</strong>
+            <div class="muted">Disponibile nella sezione dedicata</div>
+          </div>
+          <div class="info-item">
+            <strong>Accompagnatori</strong>
+            <div class="muted">Da inserire</div>
+          </div>
+          <div class="info-item">
+            <strong>Meteo</strong>
+            <div class="muted">Verificare nelle 24 ore precedenti</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="territorio">
-  <div class="wrap">
-    <div class="card">
-      <h3>Il Territorio: Cuore dell&rsquo;Area Vestina</h3>
-      <p style="font-size:16px;line-height:1.8;">L&rsquo;area pedemontana che abbraccia Penne, Farindola e Montebello di Bertona, fino ai piedi di Rigopiano, rappresenta uno dei paesaggi più autentici d&rsquo;Abruzzo. Pedalare in questi luoghi significa attraversare la storia geologica e culturale della regione, in un territorio dove l&rsquo;acqua e la roccia hanno disegnato percorsi millenari.</p>
-      <div class="territorio-grid">
-        <div class="territorio-block">
-          <h4>🌊 Il Ruolo del Fiume Tavo</h4>
-          <p>Elemento centrale dell&rsquo;itinerario è il Fiume Tavo, vera linfa vitale di questa terra. Risaliremo il suo corso partendo dal bacino artificiale di Penne, dove le acque si calmano creando un ecosistema unico. Il fiume funge da guida naturale nel paesaggio: dalle sponde ricche di vegetazione igrofila della Riserva si risale verso le sue sorgenti pedemontane, dove il carattere del corso d&rsquo;acqua diventa più selvaggio e incassato tra le rocce del Vallone d&rsquo;Angri, offrendo ai biker passaggi suggestivi e guadi che rinfrescano il cammino.</p>
+  <section class="section" id="territorio">
+    <div class="wrap">
+      <div class="card territory-text">
+        <h2>Il Territorio: Cuore dell'Area Vestina</h2>
+
+        <p>
+          L'area pedemontana che abbraccia Penne, Farindola e Montebello di Bertona, fino ai piedi di Rigopiano,
+          rappresenta uno dei paesaggi più autentici d'Abruzzo. Pedalare in questi luoghi significa attraversare
+          la storia geologica e culturale della regione, in un territorio dove l'acqua e la roccia hanno disegnato
+          percorsi millenari.
+        </p>
+
+        <h3>Il Ruolo del Fiume Tavo</h3>
+        <p>
+          Elemento centrale dell'itinerario è il Fiume Tavo, vera linfa vitale di questa terra. Risaliremo il suo corso
+          partendo dal bacino artificiale di Penne, dove le acque si calmano creando un ecosistema unico. Il fiume funge
+          da guida naturale nel paesaggio: dalle sponde ricche di vegetazione igrofila della Riserva si risale verso le
+          sue sorgenti pedemontane, dove il carattere del corso d'acqua diventa più selvaggio e incassato tra le rocce
+          del Vallone d’Angri, offrendo ai biker passaggi suggestivi e guadi che rinfrescano il cammino.
+        </p>
+
+        <h3>Storia e Geografia</h3>
+        <p>
+          L'area è l'antica culla del popolo dei Vestini. Penne, nota come la Città di Mattone, sorge su colli che
+          dominano la vallata, facendo da ponte tra il mare Adriatico e le imponenti vette del Gran Sasso.
+          Geograficamente, il territorio è un affascinante labirinto di calanchi e colline argillose che cedono
+          improvvisamente il passo a fitti boschi e pareti rocciose man mano che l'altitudine aumenta.
+        </p>
+
+        <h3>Natura e Paesaggio</h3>
+        <p>
+          Dalla Riserva Naturale Regionale Lago di Penne, oasi di biodiversità e punto di sosta fondamentale per
+          l'avifauna, il percorso si inerpica verso il Parco Nazionale del Gran Sasso e Monti della Laga.
+          Il paesaggio muta drasticamente in pochi chilometri: dai canneti del lago ai pascoli d'alta quota,
+          tra querce secolari e il volo dell'aquila reale che sorveglia la piana di Rigopiano.
+        </p>
+
+        <h3>Enogastronomia: L'Anima dello Sdijuno</h3>
+        <p>
+          Questa è la terra del Pecorino di Farindola, un'eccellenza millenaria nota per essere l'unico formaggio
+          al mondo preparato con caglio di maiale. Insieme all'olio extravergine d'oliva delle Colline Vestine DOP
+          e ai vini intensi come il Montepulciano d'Abruzzo, questi sapori rappresentano l'anima dello "sdijuno".
+          Non un semplice spuntino, ma un rito sacro di condivisione, forza e appartenenza alla terra.
+        </p>
+
+        <div class="quote-box">
+          <blockquote>
+            “Lu munn è fatte a scale, chi le scenn e chi le sale.”
+          </blockquote>
+          <cite>
+            (Il mondo è fatto a scale, c'è chi scende e chi sale) • Setak, da <em>Quilli che n'Arrivano</em>
+          </cite>
         </div>
-        <div class="territorio-block">
-          <h4>🏛️ Storia e Geografia</h4>
-          <p>L&rsquo;area è l&rsquo;antica culla del popolo dei Vestini. Penne, nota come la <em>Città di Mattone</em>, sorge su colli che dominano la vallata, facendo da ponte tra il mare Adriatico e le imponenti vette del Gran Sasso. Geograficamente, il territorio è un affascinante labirinto di calanchi e colline argillose che cedono improvvisamente il passo a fitti boschi e pareti rocciose man mano che l&rsquo;altitudine aumenta.</p>
-        </div>
-        <div class="territorio-block">
-          <h4>🦅 Natura e Paesaggio</h4>
-          <p>Dalla Riserva Naturale Regionale Lago di Penne, oasi di biodiversità e punto di sosta fondamentale per l&rsquo;avifauna, il percorso si inerpica verso il Parco Nazionale del Gran Sasso e Monti della Laga. Il paesaggio muta drasticamente in pochi chilometri: dai canneti del lago ai pascoli d&rsquo;alta quota, tra querce secolari e il volo dell&rsquo;aquila reale che sorveglia la piana di Rigopiano.</p>
-        </div>
-        <div class="territorio-block">
-          <h4>🧀 Enogastronomia: L&rsquo;Anima dello Sdijuno</h4>
-          <p>Questa è la terra del Pecorino di Farindola, un&rsquo;eccellenza millenaria nota per essere l&rsquo;unico formaggio al mondo preparato con caglio di maiale. Insieme all&rsquo;olio extravergine d&rsquo;oliva delle Colline Vestine DOP e ai vini intensi come il Montepulciano d&rsquo;Abruzzo, questi sapori rappresentano l&rsquo;anima dello <em>sdijuno</em>. Non un semplice spuntino, ma un rito sacro di condivisione, forza e appartenenza alla terra.</p>
-        </div>
-      </div>
-      <div class="citazione">
-        <blockquote>
-          &ldquo;Lu munn è fatte a scale, chi le scenn e chi le sale.&rdquo;
-          <br><em style="font-size:14px;">(Il mondo è fatto a scale, c&rsquo;è chi scende e c&rsquo;è chi sale)</em>
-        </blockquote>
-        <cite>&mdash; Setak, da <em>Quilli che n&rsquo;Arrivano</em></cite>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="programma">
-  <div class="wrap grid-main">
-    <div class="card">
-      <h3>Programma dettagliato</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Orario</th>
-            <th>Km</th>
-            <th>Quota</th>
-            <th>Tappa / Note</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>08:30</td><td>&mdash;</td><td>~
+  <section class="section" id="foto">
+    <div class="wrap">
+      <h2>Foto e Video</h2>
+      <div class="gallery">
+        <div class="card">
+          <img src="foto1.jpg" alt="Paesaggio dell'Area Vestina">
+        </div>
+        <div class="card">
+          <img src="foto2.jpg" alt="Tratto del percorso tra Penne e Farindola">
+        </div>
+        <div class="card">
+          <img src="foto3.jpg" alt="Scorci naturali lungo il Fiume Tavo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gpx">
+    <div class="wrap">
+      <div class="card">
+        <h2>GPX</h2>
+        <p class="muted">
+          Qui puoi inserire il link alla traccia GPX, eventuali mappe interattive o file scaricabili.
+        </p>
+        <div class="actions">
+          <a class="btn secondary" href="#" target="_blank" rel="noopener">Scarica traccia GPX</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sicurezza">
+    <div class="wrap">
+      <div class="card">
+        <h2>Sicurezza</h2>
+        <div class="info-list">
+          <div class="info-item">
+            <strong>Obbligatorio</strong>
+            <div class="muted">Casco protettivo, bici efficiente, camera d'aria o kit tubeless, acqua e alimentazione personale.</div>
+          </div>
+          <div class="info-item">
+            <strong>Consigliato</strong>
+            <div class="muted">Guanti, antivento, power bank, traccia caricata sul dispositivo, mini pompa.</div>
+          </div>
+          <div class="info-item">
+            <strong>Avvertenza</strong>
+            <div class="muted">L'itinerario può includere sterrati, guadi, salite e tratti che richiedono buona conduzione del mezzo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      Gruppo Ciclo CAI Pescara • Scheda escursione in formato web
+    </div>
+  </footer>
+
+</body>
+</html>
